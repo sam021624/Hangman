@@ -23,7 +23,7 @@ public class Question1 extends JPanel {
     private JLabel wordLabel;
     private JLabel feedbackLabel; 
     
-    ImageIcon icon = new ImageIcon((getClass().getResource("/bg.png")));
+    ImageIcon icon = new ImageIcon((getClass().getResource("/board.png")));
     
     Main frame;
 
@@ -31,6 +31,7 @@ public class Question1 extends JPanel {
     	this.frame = frame;
     	
     	JLabel lblTitle = new JLabel("Question #1");
+    	lblTitle.setForeground(Color.WHITE);
         lblTitle.setFont(new Font("Consolas", Font.BOLD, 35));
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(10, 11, 464, 109);
@@ -43,28 +44,32 @@ public class Question1 extends JPanel {
         add(lblQuestion);
 
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
+        wordLabel.setForeground(Color.WHITE);
         wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
         wordLabel.setBounds(10, 247, 464, 50);
         add(wordLabel);
 
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
         feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
-        feedbackLabel.setForeground(Color.BLUE);
+        feedbackLabel.setForeground(Color.ORANGE);
         feedbackLabel.setBounds(46, 307, 401, 30);
         add(feedbackLabel);
 
+        this.setSize(484, 461);
+        this.setLayout(null);
+        setFocusable(true);
+        
+        JPanel panel = new JPanel();
+        panel.setBounds(33, 130, 426, 89);
+        add(panel);
+        
 		Image originalImage = icon.getImage();
 		Image scaledImage = originalImage.getScaledInstance(484, 461, Image.SCALE_SMOOTH); 
 		ImageIcon scaledIcon = new ImageIcon(scaledImage); 
         
         JLabel lblNewLabel = new JLabel(scaledIcon);
-        lblNewLabel.setBounds(0, 0, 484, 461);
+        lblNewLabel.setBounds(0, 0, 487, 463);
         add(lblNewLabel);
-        
-        this.setSize(484, 461);
-        
-        this.setLayout(null);
-        setFocusable(true);
         
         addKeyListener(new KeyListener() {
             @Override

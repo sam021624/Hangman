@@ -2,9 +2,11 @@ package questionpanels;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -22,12 +24,15 @@ public class Question3 extends JPanel {
     private JLabel wordLabel; // Label to display the current guessed word
     private JLabel feedbackLabel; // Label to display feedback for the user
     
+    ImageIcon icon = new ImageIcon((getClass().getResource("/board.png")));
+    
     Main frame;
 
     public Question3(Main frame) {
     	this.frame = frame;
     	
     	JLabel lblTitle = new JLabel("Question #3");
+    	lblTitle.setForeground(Color.WHITE);
         lblTitle.setFont(new Font("Consolas", Font.BOLD, 35));
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(10, 11, 464, 109);
@@ -42,6 +47,7 @@ public class Question3 extends JPanel {
 
         // Word Display Label
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
+        wordLabel.setForeground(Color.WHITE);
         wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
         wordLabel.setBounds(10, 247, 464, 50);
         add(wordLabel);
@@ -49,9 +55,21 @@ public class Question3 extends JPanel {
         // Feedback Label
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
         feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
-        feedbackLabel.setForeground(Color.BLUE);
+        feedbackLabel.setForeground(Color.ORANGE);
         feedbackLabel.setBounds(46, 307, 401, 30);
         add(feedbackLabel);
+        
+        JPanel panel = new JPanel();
+        panel.setBounds(33, 130, 426, 89);
+        add(panel);
+        
+		Image originalImage = icon.getImage();
+		Image scaledImage = originalImage.getScaledInstance(484, 461, Image.SCALE_SMOOTH); 
+		ImageIcon scaledIcon = new ImageIcon(scaledImage); 
+        
+        JLabel lblNewLabel = new JLabel(scaledIcon);
+        lblNewLabel.setBounds(0, 0, 487, 463);
+        add(lblNewLabel);
 
         // Panel Configuration
         this.setSize(484, 461);
