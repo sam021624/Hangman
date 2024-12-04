@@ -25,13 +25,15 @@ public class Main extends JFrame {
 	public Question8 question8Panel = new Question8(this);
 	public Question9 question9Panel = new Question9(this);
 	public Question10 question10Panel = new Question10(this);
-	
+
 	Main() {
-		this.add(question1Panel);
-		
+		getContentPane().setLayout(null);
+		question1Panel.setBounds(0, 0, 986, 699);
+		getContentPane().add(question1Panel);
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Guess the Word!");
-		this.setSize(500, 500);
+		this.setSize(1000, 736);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}

@@ -19,10 +19,10 @@ import main.Methods;
 public class Question3 extends JPanel {
 	Methods methods = new Methods();
 	
-    private String WORD = "ERGONOMICS"; // The word to guess
+    private String WORD = "ERGONOMICS"; 
     private StringBuilder guessedWord = new StringBuilder("_".repeat(WORD.length()));
-    private JLabel wordLabel; // Label to display the current guessed word
-    private JLabel feedbackLabel; // Label to display feedback for the user
+    private JLabel wordLabel; 
+    private JLabel feedbackLabel; 
     
     ImageIcon icon = new ImageIcon((getClass().getResource("/board.png")));
     
@@ -33,50 +33,45 @@ public class Question3 extends JPanel {
     	
     	JLabel lblTitle = new JLabel("Question #3");
     	lblTitle.setForeground(Color.WHITE);
-        lblTitle.setFont(new Font("Consolas", Font.BOLD, 35));
-        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(10, 11, 464, 109);
+		lblTitle.setFont(new Font("Consolas", Font.BOLD, 50));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setBounds(10, 11, 967, 109);
         add(lblTitle);
 
-        // Question Label
         JLabel lblQuestion = new JLabel("<html>What do you call the field that studies how humans interact with computers?</html>");
-        lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 24));
-        lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
-        lblQuestion.setBounds(46, 146, 401, 60);
+		lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 35));
+		lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQuestion.setBounds(80, 146, 879, 120);
         add(lblQuestion);
 
-        // Word Display Label
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
-        wordLabel.setForeground(Color.WHITE);
-        wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
-        wordLabel.setBounds(10, 247, 464, 50);
+		wordLabel.setForeground(Color.WHITE);
+		wordLabel.setFont(new Font("Arial", Font.BOLD, 40));
+		wordLabel.setBounds(0, 353, 977, 94);
         add(wordLabel);
 
-        // Feedback Label
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
-        feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
-        feedbackLabel.setForeground(Color.ORANGE);
-        feedbackLabel.setBounds(46, 307, 401, 30);
+		feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 40));
+		feedbackLabel.setForeground(Color.ORANGE);
+		feedbackLabel.setBounds(10, 434, 967, 129);
         add(feedbackLabel);
         
-        JPanel panel = new JPanel();
-        panel.setBounds(33, 130, 426, 89);
-        add(panel);
-        
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 130, 967, 165);
+		add(panel);
+
 		Image originalImage = icon.getImage();
-		Image scaledImage = originalImage.getScaledInstance(484, 461, Image.SCALE_SMOOTH); 
-		ImageIcon scaledIcon = new ImageIcon(scaledImage); 
-        
-        JLabel lblNewLabel = new JLabel(scaledIcon);
-        lblNewLabel.setBounds(0, 0, 487, 463);
-        add(lblNewLabel);
+		Image scaledImage = originalImage.getScaledInstance(1000, 750, Image.SCALE_SMOOTH);
+		ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-        // Panel Configuration
-        this.setSize(484, 461);
-        this.setBackground(new Color(204, 204, 255));
-        this.setLayout(null);
+		JLabel lblNewLabel = new JLabel(scaledIcon);
+		lblNewLabel.setBounds(0, 0, 1000, 707);
+		add(lblNewLabel);
+		
+		this.setSize(986, 699);
+		this.setLayout(null);
+		setFocusable(true);
 
-        // Add Key Listener
         setFocusable(true);
         addKeyListener(new KeyListener() {
             @Override
@@ -134,6 +129,6 @@ public class Question3 extends JPanel {
     }
 
     private void disableInput() {
-        setFocusable(false); // Disable further input
+        setFocusable(false); 
     }
 }

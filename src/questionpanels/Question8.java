@@ -33,44 +33,44 @@ public class Question8 extends JPanel {
     	
     	JLabel lblTitle = new JLabel("Question #8");
     	lblTitle.setForeground(Color.WHITE);
-        lblTitle.setFont(new Font("Consolas", Font.BOLD, 35));
-        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(10, 11, 464, 109);
+		lblTitle.setFont(new Font("Consolas", Font.BOLD, 50));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setBounds(10, 11, 967, 109);
         add(lblTitle);
 
         JLabel lblQuestion = new JLabel("<html>What is the assessment of a product’s ease of use and efficiency?</html>");
-        lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 24));
-        lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
-        lblQuestion.setBounds(46, 140, 401, 72);
+		lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 35));
+		lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQuestion.setBounds(80, 146, 879, 120);
         add(lblQuestion);
 
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
-        wordLabel.setForeground(Color.WHITE);
-        wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
-        wordLabel.setBounds(10, 247, 464, 50);
+		wordLabel.setForeground(Color.WHITE);
+		wordLabel.setFont(new Font("Arial", Font.BOLD, 40));
+		wordLabel.setBounds(0, 353, 977, 94);
         add(wordLabel);
 
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
-        feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
-        feedbackLabel.setForeground(Color.ORANGE);
-        feedbackLabel.setBounds(46, 307, 401, 30);
+		feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 40));
+		feedbackLabel.setForeground(Color.ORANGE);
+		feedbackLabel.setBounds(10, 434, 967, 129);
         add(feedbackLabel);
         
-        JPanel panel = new JPanel();
-        panel.setBounds(33, 130, 426, 89);
-        add(panel);
-        
-		Image originalImage = icon.getImage();
-		Image scaledImage = originalImage.getScaledInstance(484, 461, Image.SCALE_SMOOTH); 
-		ImageIcon scaledIcon = new ImageIcon(scaledImage); 
-        
-        JLabel lblNewLabel = new JLabel(scaledIcon);
-        lblNewLabel.setBounds(0, 0, 487, 463);
-        add(lblNewLabel);
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 130, 967, 165);
+		add(panel);
 
-        this.setSize(484, 461);
-        this.setBackground(new Color(204, 204, 255));
-        this.setLayout(null);
+		Image originalImage = icon.getImage();
+		Image scaledImage = originalImage.getScaledInstance(1000, 750, Image.SCALE_SMOOTH);
+		ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+		JLabel lblNewLabel = new JLabel(scaledIcon);
+		lblNewLabel.setBounds(0, 0, 1000, 707);
+		add(lblNewLabel);
+		
+		this.setSize(986, 699);
+		this.setLayout(null);
+		setFocusable(true);
 
         setFocusable(true);
         addKeyListener(new KeyListener() {
