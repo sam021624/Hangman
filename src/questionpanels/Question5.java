@@ -17,10 +17,10 @@ import main.Methods;
 public class Question5 extends JPanel {
 	Methods methods = new Methods();
 	
-    private String WORD = "UNIFORMITY"; // The word to guess
+    private String WORD = "UNIFORMITY"; 
     private StringBuilder guessedWord = new StringBuilder("_".repeat(WORD.length()));
-    private JLabel wordLabel; // Label to display the current guessed word
-    private JLabel feedbackLabel; // Label to display feedback for the user
+    private JLabel wordLabel; 
+    private JLabel feedbackLabel; 
     
     Main frame;
 
@@ -33,32 +33,27 @@ public class Question5 extends JPanel {
         lblTitle.setBounds(10, 11, 464, 109);
         add(lblTitle);
 
-        // Question Label
         JLabel lblQuestion = new JLabel("<html>What word describes the consistency in design across multiple platforms?</html>");
         lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 24));
         lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
         lblQuestion.setBounds(46, 146, 401, 64);
         add(lblQuestion);
 
-        // Word Display Label
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
         wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
         wordLabel.setBounds(10, 247, 464, 50);
         add(wordLabel);
 
-        // Feedback Label
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
         feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
         feedbackLabel.setForeground(Color.BLUE);
         feedbackLabel.setBounds(46, 307, 401, 30);
         add(feedbackLabel);
 
-        // Panel Configuration
         this.setSize(484, 461);
         this.setBackground(new Color(204, 204, 255));
         this.setLayout(null);
 
-        // Add Key Listener
         setFocusable(true);
         addKeyListener(new KeyListener() {
             @Override
@@ -116,6 +111,6 @@ public class Question5 extends JPanel {
     }
 
     private void disableInput() {
-        setFocusable(false); // Disable further input
+        setFocusable(false); 
     }
 }

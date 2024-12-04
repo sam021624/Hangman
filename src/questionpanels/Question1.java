@@ -18,10 +18,10 @@ import main.Methods;
 public class Question1 extends JPanel {
 	Methods methods = new Methods();
 	
-    private String WORD = "DESIGN"; // The word to guess
+    private String WORD = "DESIGN"; 
     private StringBuilder guessedWord = new StringBuilder("_".repeat(WORD.length()));
-    private JLabel wordLabel; // Label to display the current guessed word
-    private JLabel feedbackLabel; // Label to display feedback for the user
+    private JLabel wordLabel;
+    private JLabel feedbackLabel; 
     
     ImageIcon icon = new ImageIcon((getClass().getResource("/bg.png")));
     
@@ -36,20 +36,17 @@ public class Question1 extends JPanel {
         lblTitle.setBounds(10, 11, 464, 109);
         add(lblTitle);
 
-        // Question Label
         JLabel lblQuestion = new JLabel("<html>What term refers to the visual layout of an interface?</html>");
         lblQuestion.setFont(new Font("Segoe UI", Font.ITALIC, 24));
         lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
         lblQuestion.setBounds(46, 146, 401, 60);
         add(lblQuestion);
 
-        // Word Display Label
         wordLabel = new JLabel(guessedWord.toString(), SwingConstants.CENTER);
         wordLabel.setFont(new Font("Arial", Font.BOLD, 28));
         wordLabel.setBounds(10, 247, 464, 50);
         add(wordLabel);
 
-        // Feedback Label
         feedbackLabel = new JLabel("Start guessing by typing letters!", SwingConstants.CENTER);
         feedbackLabel.setFont(new Font("Arial", Font.ITALIC, 18));
         feedbackLabel.setForeground(Color.BLUE);
@@ -64,7 +61,6 @@ public class Question1 extends JPanel {
         lblNewLabel.setBounds(0, 0, 484, 461);
         add(lblNewLabel);
         
-        // Panel Configuration
         this.setSize(484, 461);
         
         this.setLayout(null);
@@ -125,6 +121,6 @@ public class Question1 extends JPanel {
     }
 
     private void disableInput() {
-        setFocusable(false); // Disable further input
+        setFocusable(false); 
     }
 }
